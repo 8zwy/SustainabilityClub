@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نادي الاستدامة - مبادرة رشيد</title>
+    <style>
+        /* إعادة ضبط العناصر والخطوط */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f9f5;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* الهيدر وشريط التنقل */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* الشعار ورابط الصفحة الرئيسية */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #2e7d32;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            margin-left: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo-text h1 {
+            font-size: 1.4rem;
+            color: #1b5e20;
+            font-weight: bold;
+        }
+
+        .logo-text span {
+            font-size: 0.9rem;
+            color: #666;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2e7d32;
+        }
+
+        /* القسم الرئيسي (Hero Section) */
+        .hero {
+            background: linear-gradient(135deg, #a5d6a7, #1b5e20);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ffffff;
+            color: #1b5e20;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #e8f5e9;
+            transform: translateY(-2px);
+        }
+
+        /* محتوى المبادرات والمحطات */
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            color: #1b5e20;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: #81c784;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .stations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .station-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid #2e7d32;
+        }
+
+        .station-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .station-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .station-card h3 {
+            color: #2e7d32;
+            margin-bottom: 15px;
+        }
+
+        /* قسم التسجيل المضمن (Embedded Form) */
+        .register-section {
+            background-color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            max-width: 750px;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .form-frame {
+            width: 100%;
+            height: 700px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: #1b5e20;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر وشريط التنقل -->
+    <header>
+        <div class="navbar">
+            <!-- الشعار يوجه للصفحة الرئيسية عند الضغط عليه -->
+            <a href="#" class="logo-container" title="الرئيسية">
+                <div class="logo-icon">🌱</div>
+                <div class="logo-text">
+                    <h1>نادي الاستدامة</h1>
+                    <span>مدرسة عبدالله بن جعفر</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#rasheed">مبادرة رشيد</a></li>
+                <li><a href="#register">سجل معنا</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- الواجهة الرئيسية -->
+    <section class="hero">
+        <h2>أهلاً بكم في نادي الاستدامة</h2>
+        <p>نعمل معاً من أجل بيئة مدرسية ومجتمعية خضراء ومستدامة تحت إشراف مدرسة عبدالله بن جعفر</p>
+        <a href="#register" class="btn">انضم إلينا الآن</a>
+    </section>
+
+    <!-- محطات مبادرة رشيد -->
+    <section class="container" id="rasheed">
+        <h2 class="section-title">مبادرة رشيد</h2>
+        <p style="text-align: center; margin-bottom: 30px; font-size: 1.1rem; color: #555;">
+            تهدف مبادرة <strong>"رشيد"</strong> إلى ترشيد الموارد وحماية البيئة عبر ثلاث محطات رئيسية:
+        </p>
+
+        <div class="stations-grid">
+            <!-- المحطة الأولى -->
+            <div class="station-card">
+                <div class="station-icon">💡</div>
+                <h3>توفير استهلاك الكهرباء</h3>
+                <p>نشر التوعية حول ترشيد الطاقة، وإغلاق الأجهزة والإضاءة غير المستخدمة لتقليل الانبعاثات الكربونية.</p>
+            </div>
+
+            <!-- المحطة الثانية -->
+            <div class="station-card">
+                <div class="station-icon">🍾</div>
+                <h3>جمع وفرز قوارير البلاستيك</h3>
+                <p>تخصيص حاويات خاصة في المدرسة لجمع العلب والقوارير البلاستيكية لفرزها بشكل صحيح ونظيف.</p>
+            </div>
+
+            <!-- المحطة الثالثة -->
+            <div class="station-card">
+                <div class="station-icon">♻️</div>
+                <h3>إعادة التدوير</h3>
+                <p>تحويل المخلفات القابلة للتدوير إلى مواد جديدة مستفاد منها، وتقليل النفايات العامة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- نموذج التسجيل عبر Google Forms -->
+    <section class="container" id="register">
+        <div class="register-section">
+            <h2 class="section-title" style="margin-bottom: 20px;">سجل معنا</h2>
+            <p style="margin-bottom: 20px; color: #666;">يرجى تعبئة النموذج التالي للانضمام لنادي الاستدامة:</p>
+            
+            <!-- تضمين نموذج نماذج Google داخل الموقع مباشرة -->
+            <iframe class="form-frame" src="https://docs.google.com/forms/d/e/1FAIpQLSdXnKbkodl73K_xoQ1Yv1bX3jm0ALs5VKhWfGUKaxqQBEEYAg/viewform?embedded=true">جاري التحميل…</iframe>
+        </div>
+    </section>
+
+    <!-- الفوتر -->
+    <footer>
+        <p>جميع الحقوق محفوظة © نادي الاستدامة - مدرسة عبدالله بن جعفر</p>
+    </footer>
+
+</body>
+</html>
